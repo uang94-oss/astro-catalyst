@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { getPostBySlug, getRelatedPosts } from "@/data/posts";
-import { Calendar, Clock, User, ArrowLeft } from "lucide-react";
+import { Calendar, Clock } from "lucide-react";
 import BacaJuga from "@/components/BacaJuga";
 import RelatedPosts from "@/components/RelatedPosts";
+import TableOfContents from "@/components/TableOfContents";
+import ShareButtons from "@/components/ShareButtons";
 import SEOHead from "@/components/SEOHead";
 import NotFound from "./NotFound";
 
@@ -15,6 +17,7 @@ const ArticlePage = () => {
 
   const related = getRelatedPosts(post, 4);
   const bacaJugaPosts = related.slice(0, 3);
+  const articleUrl = `https://gratkapl.com/${post.slug}`;
 
   const paragraphs = post.content.split("\n\n");
   const insertIndex = Math.min(2, paragraphs.length - 1);
@@ -27,13 +30,22 @@ const ArticlePage = () => {
     image: post.image,
     datePublished: post.date,
     author: { "@type": "Person", name: post.author },
-    publisher: { "@type": "Organization", name: "DuidPro" },
+    publisher: { "@type": "Organization", name: "gratkapl.com" },
   };
+
+  const toId = (text: string) =>
+    text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
 
   const renderContent = (text: string) => {
     return text.split("\n\n").map((block, i) => {
-      if (block.startsWith("## ")) return <h2 key={i}>{block.replace("## ", "")}</h2>;
-      if (block.startsWith("### ")) return <h3 key={i}>{block.replace("### ", "")}</h3>;
+      if (block.startsWith("## ")) {
+        const t = block.replace("## ", "");
+        return <h2 key={i} id={toId(t)}>{t}</h2>;
+      }
+      if (block.startsWith("### ")) {
+        const t = block.replace("### ", "");
+        return <h3 key={i} id={toId(t)}>{t}</h3>;
+      }
       if (block.includes("**")) {
         const parts = block.split(/\*\*/g);
         return <p key={i}>{parts.map((part, j) => (j % 2 === 1 ? <strong key={j}>{part}</strong> : part))}</p>;
@@ -51,23 +63,27 @@ const ArticlePage = () => {
 
       <div className="duid-container py-4">
         <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4">
-          <ArrowLeft className="w-4 h-4" /> Kembali
+          ← Kembali
         </Link>
 
         {/* Hero image */}
         <div className="rounded-2xl overflow-hidden mb-5 aspect-video">
-          <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+          <img src={post.image} alt={post.title} className="w-full h-full object-cover" loading="lazy" />
         </div>
 
         {/* Category */}
         <span className="text-primary font-medium text-sm">{post.category.toLowerCase()}</span>
 
-        <h1 className="text-2xl font-extrabold text-foreground leading-tight mt-2 mb-4">
+        {/* H1 */}
+        <h1 className="text-2xl font-extrabold text-foreground leading-tight mt-2 mb-3">
           {post.title}
         </h1>
 
+        {/* Share buttons after title */}
+        <ShareButtons url={articleUrl} title={post.title} />
+
         {/* Author info */}
-        <div className="flex items-center gap-3 mb-6 pb-5 border-b border-border">
+        <div className="flex items-center gap-3 mb-4 pb-4 border-b border-border">
           <img
             src={`https://ui-avatars.com/api/?name=${post.author}&background=4a90d9&color=fff&size=128`}
             alt={post.author}
@@ -82,6 +98,16 @@ const ArticlePage = () => {
           </div>
         </div>
 
+        {/* AI Overview */}
+        {post.aiOverview && (
+          <div className="mb-4 p-4 rounded-xl bg-primary/5 border border-primary/10">
+            <p className="text-sm text-muted-foreground leading-relaxed italic">{post.aiOverview}</p>
+          </div>
+        )}
+
+        {/* Table of Contents */}
+        <TableOfContents content={post.content} />
+
         {/* Content */}
         <div className="article-content">
           {renderContent(contentBefore.join("\n\n"))}
@@ -95,6 +121,9 @@ const ArticlePage = () => {
             <span key={tag} className="text-xs bg-muted text-muted-foreground px-3 py-1.5 rounded-full">{tag}</span>
           ))}
         </div>
+
+        {/* Share after content */}
+        <ShareButtons url={articleUrl} title={post.title} />
 
         <RelatedPosts posts={related} />
       </div>
