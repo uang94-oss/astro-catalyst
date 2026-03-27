@@ -144,7 +144,7 @@ Google tidak menghukum konten AI selama kontennya berkualitas dan memberikan nil
 Tergantung kebutuhan, tapi ChatGPT, Claude, dan Midjourney adalah beberapa yang populer.`,
     category: "AI",
     tags: ["AI", "Content Creator", "Produktivitas", "Tools"],
-    author: "Admin",
+    author: "Nagol Dachi",
     date: "2026-03-20",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
     readTime: 7,
