@@ -226,7 +226,7 @@ Tidak semua bisnis membutuhkannya, tapi ML bisa memberikan keunggulan kompetitif
 Bisa dimulai dari gratis menggunakan tools open-source hingga jutaan per bulan untuk solusi enterprise.`,
     category: "AI",
     tags: ["Machine Learning", "Bisnis", "UMKM", "Teknologi"],
-    author: "Admin",
+    author: "Nagol Dachi",
     date: "2026-03-15",
     image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&q=80",
     readTime: 6,
