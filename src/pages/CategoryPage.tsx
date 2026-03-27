@@ -1,8 +1,5 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { getPostsByCategory, categories } from "@/data/posts";
-import PostCard from "@/components/PostCard";
-import Sidebar from "@/components/Sidebar";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import SEOHead from "@/components/SEOHead";
 import NotFound from "./NotFound";
 
@@ -18,35 +15,40 @@ const CategoryPage = () => {
     <>
       <SEOHead
         title={`Kategori ${category.name}`}
-        description={`Kumpulan artikel tentang ${category.name} di DuidPro. Pelajari tips, panduan, dan strategi terbaru.`}
+        description={`Kumpulan artikel tentang ${category.name} di DuidPro.`}
       />
 
-      <main className="max-w-6xl mx-auto px-4 py-8">
-        <Breadcrumbs items={[{ label: category.name }]} />
-
-        <h1 className="text-2xl md:text-3xl font-extrabold text-foreground mb-2">
-          Kategori: {category.name}
+      <div className="duid-container py-6">
+        <h1 className="text-2xl font-extrabold text-foreground mb-1">
+          {category.name}
         </h1>
-        <p className="text-muted-foreground mb-8">
-          {catPosts.length} artikel tentang {category.name}
-        </p>
+        <p className="text-sm text-muted-foreground mb-6">{catPosts.length} artikel</p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-              {catPosts.map((post) => (
-                <PostCard key={post.id} post={post} />
-              ))}
-            </div>
-            {catPosts.length === 0 && (
-              <p className="text-muted-foreground text-center py-12">Belum ada artikel dalam kategori ini.</p>
-            )}
-          </div>
-          <div className="lg:col-span-1">
-            <Sidebar />
-          </div>
+        <div className="space-y-4">
+          {catPosts.map((post) => (
+            <Link
+              key={post.id}
+              to={`/${post.slug}`}
+              className="duid-card flex gap-4 p-3 animate-fade-in"
+            >
+              <div className="w-28 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                <img src={post.image} alt={post.title} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-sm line-clamp-2 mb-1 text-foreground">{post.title}</h3>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <span className="text-primary font-medium">{post.category.toLowerCase()}</span>
+                  <span>·</span>
+                  <span>{new Date(post.date).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+          {catPosts.length === 0 && (
+            <p className="text-center text-muted-foreground py-12">Belum ada artikel.</p>
+          )}
         </div>
-      </main>
+      </div>
     </>
   );
 };

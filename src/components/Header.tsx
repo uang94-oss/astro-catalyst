@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, Search, Moon, Sun } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, Search, Moon, Sun, User } from "lucide-react";
 import { categories } from "@/data/posts";
 
 const Header = () => {
@@ -13,52 +13,45 @@ const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
-      <div className="max-w-6xl mx-auto px-4">
-        {/* Top bar */}
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-extrabold text-lg">D</span>
-            </div>
-            <span className="text-xl font-extrabold text-foreground tracking-tight">
-              Duid<span className="text-primary">Pro</span>
-            </span>
-          </Link>
-
-          {/* Desktop nav */}
-          <nav className="hidden md:flex items-center gap-1">
-            <Link to="/" className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted">
-              Beranda
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-b border-border h-14">
+        <div className="duid-container h-full flex items-center justify-between">
+          {/* Left: hamburger + logo */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="p-1.5 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+            >
+              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+            <Link to="/" className="flex items-center">
+              <span className="text-lg font-extrabold text-foreground tracking-tight">
+                duidpro
+              </span>
+              <span className="text-lg font-normal text-muted-foreground">.com</span>
             </Link>
-            {categories.map((cat) => (
-              <Link
-                key={cat.slug}
-                to={`/kategori/${cat.slug}`}
-                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted"
-              >
-                {cat.name}
-              </Link>
-            ))}
-          </nav>
+          </div>
 
-          <div className="flex items-center gap-2">
+          {/* Right: search, dark, user */}
+          <div className="flex items-center gap-1">
             <Link to="/cari" className="p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
               <Search className="w-5 h-5" />
             </Link>
             <button onClick={toggleDark} className="p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
               {dark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
-            <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden p-2 rounded-lg hover:bg-muted text-muted-foreground">
-              {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <button className="p-2 rounded-lg hover:bg-muted text-muted-foreground hover:text-foreground transition-colors">
+              <User className="w-5 h-5" />
             </button>
           </div>
         </div>
+      </header>
 
-        {/* Mobile nav */}
-        {mobileOpen && (
-          <nav className="md:hidden pb-4 border-t border-border pt-3 space-y-1">
-            <Link to="/" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted">
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm" onClick={() => setMobileOpen(false)}>
+          <nav className="fixed top-14 left-0 bottom-0 w-72 bg-card border-r border-border p-4 space-y-1" onClick={(e) => e.stopPropagation()}>
+            <Link to="/" onClick={() => setMobileOpen(false)} className="block px-3 py-2.5 text-sm font-medium text-foreground rounded-lg hover:bg-muted">
               Beranda
             </Link>
             {categories.map((cat) => (
@@ -66,15 +59,15 @@ const Header = () => {
                 key={cat.slug}
                 to={`/kategori/${cat.slug}`}
                 onClick={() => setMobileOpen(false)}
-                className="block px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted"
+                className="block px-3 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted"
               >
                 {cat.name}
               </Link>
             ))}
           </nav>
-        )}
-      </div>
-    </header>
+        </div>
+      )}
+    </>
   );
 };
 

@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { Search } from "lucide-react";
 import { posts } from "@/data/posts";
-import PostCard from "@/components/PostCard";
 import SEOHead from "@/components/SEOHead";
 
 const SearchPage = () => {
@@ -21,9 +21,9 @@ const SearchPage = () => {
 
   return (
     <>
-      <SEOHead title="Cari Artikel" description="Cari artikel seputar keuangan, SEO, AI, dan blogging di DuidPro." />
+      <SEOHead title="Cari Artikel" description="Cari artikel di DuidPro." />
 
-      <main className="max-w-4xl mx-auto px-4 py-8">
+      <div className="duid-container py-6">
         <h1 className="text-2xl font-extrabold text-foreground mb-6">Cari Artikel</h1>
 
         <div className="relative mb-8">
@@ -33,7 +33,7 @@ const SearchPage = () => {
             placeholder="Ketik kata kunci..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full pl-12 pr-4 py-3.5 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
+            className="w-full pl-12 pr-4 py-3 rounded-xl border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors"
           />
         </div>
 
@@ -43,16 +43,32 @@ const SearchPage = () => {
           </p>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div className="space-y-4">
           {results.map((post) => (
-            <PostCard key={post.id} post={post} />
+            <Link
+              key={post.id}
+              to={`/${post.slug}`}
+              className="duid-card flex gap-4 p-3 animate-fade-in"
+            >
+              <div className="w-28 h-20 rounded-xl overflow-hidden flex-shrink-0">
+                <img src={post.image} alt={post.title} className="w-full h-full object-cover" loading="lazy" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <h3 className="font-semibold text-sm line-clamp-2 mb-1 text-foreground">{post.title}</h3>
+                <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <span className="text-primary font-medium">{post.category.toLowerCase()}</span>
+                  <span>·</span>
+                  <span>{new Date(post.date).toLocaleDateString("id-ID", { day: "numeric", month: "long", year: "numeric" })}</span>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
 
         {query.trim() && results.length === 0 && (
           <p className="text-center text-muted-foreground py-12">Tidak ada artikel yang ditemukan.</p>
         )}
-      </main>
+      </div>
     </>
   );
 };
