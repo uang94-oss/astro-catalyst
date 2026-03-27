@@ -187,7 +187,7 @@ Biasanya 6-12 bulan untuk melihat penghasilan pertama yang berarti, tergantung n
 Bisa dimulai dari Rp500.000 - Rp1.500.000 per tahun untuk domain dan hosting dasar.`,
     category: "Blogging",
     tags: ["Blogging", "Monetisasi", "Bisnis Online", "Pendapatan Pasif"],
-    author: "Admin",
+    author: "Nagol Dachi",
     date: "2026-03-18",
     image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
     readTime: 9,
