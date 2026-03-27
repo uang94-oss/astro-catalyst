@@ -278,6 +278,7 @@ Metode ini fleksibel dan bisa disesuaikan. Yang terpenting adalah memiliki siste
     slug: "google-discover-cara-agar-artikel-muncul",
     title: "Google Discover: Cara Agar Artikel Kamu Muncul",
     excerpt: "Strategi dan tips praktis untuk meningkatkan peluang artikel kamu muncul di Google Discover dan mendapatkan traffic organik besar.",
+    aiOverview: "Google Discover bisa mendatangkan ribuan klik per hari tanpa perlu SEO tradisional. Masalahnya, banyak yang belum tahu cara 'masuk radar' fitur ini.",
     content: `Google Discover adalah feed konten personalisasi yang muncul di halaman utama Google mobile. Ini bisa menjadi sumber traffic yang sangat besar jika konten kamu berhasil muncul di sana.
 
 ## Apa Itu Google Discover?
