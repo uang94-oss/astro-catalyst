@@ -304,7 +304,7 @@ Bervariasi, tapi beberapa website melaporkan ribuan hingga ratusan ribu klik per
 Ya, tapi niche berita, lifestyle, teknologi, dan keuangan cenderung lebih sering muncul.`,
     category: "SEO",
     tags: ["Google Discover", "SEO", "Traffic", "Content Marketing"],
-    author: "Admin",
+    author: "Nagol Dachi",
     date: "2026-03-10",
     image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800&q=80",
     readTime: 6,
