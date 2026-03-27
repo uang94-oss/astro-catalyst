@@ -56,7 +56,7 @@ Ya, sebagian besar tools AI keuangan modern menggunakan enkripsi tingkat bank un
 Banyak tools yang menawarkan versi gratis dengan fitur dasar. Untuk fitur premium, biaya bulanan biasanya mulai dari Rp50.000 hingga Rp200.000.`,
     category: "Keuangan",
     tags: ["AI", "Keuangan Pribadi", "Laporan Keuangan", "Teknologi"],
-    author: "Admin",
+    author: "Nagol Dachi",
     date: "2026-03-25",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
     readTime: 8,
