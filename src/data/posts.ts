@@ -114,6 +114,7 @@ Biasanya 3-6 bulan untuk melihat hasil signifikan, tergantung kompetisi dan kual
     slug: "panduan-lengkap-ai-untuk-content-creator",
     title: "Panduan Lengkap AI untuk Content Creator",
     excerpt: "Bagaimana content creator bisa memanfaatkan AI untuk meningkatkan produktivitas dan kualitas konten tanpa kehilangan sentuhan personal.",
+    aiOverview: "Content creator yang masih kerja sendirian tanpa bantuan AI mungkin ketinggalan. Sekarang, AI bisa bantu dari riset ide sampai editing — yang penting tahu cara pakainya biar tetap terasa personal.",
     content: `AI telah mengubah cara content creator bekerja. Dari pembuatan ide, penulisan draft, hingga editing, AI bisa membantu di setiap tahap proses kreatif.
 
 Namun, penting untuk memahami cara menggunakan AI secara bijak agar konten yang dihasilkan tetap autentik dan bernilai.
