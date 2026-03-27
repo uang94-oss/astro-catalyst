@@ -3,6 +3,7 @@ export interface Post {
   slug: string;
   title: string;
   excerpt: string;
+  aiOverview: string;
   content: string;
   category: string;
   tags: string[];
