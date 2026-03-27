@@ -23,7 +23,7 @@ const ContactPage = () => {
       <SEOHead
         title="Contact - gratkapl.com"
         description="Hubungi kami untuk pertanyaan, saran, atau kerjasama. Tim gratkapl.com siap membantu."
-        url="https://gratkapl.com/contact"
+        canonical="https://gratkapl.com/contact"
       />
       <div className="duid-container py-8 max-w-2xl mx-auto">
         <h1 className="text-3xl font-bold text-foreground mb-2">Hubungi Kami</h1>

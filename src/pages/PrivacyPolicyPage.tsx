@@ -6,7 +6,7 @@ const PrivacyPolicyPage = () => {
       <SEOHead
         title="Privacy Policy - gratkapl.com"
         description="Kebijakan privasi gratkapl.com. Pelajari bagaimana kami mengumpulkan, menggunakan, dan melindungi data Anda."
-        url="https://gratkapl.com/privacy-policy"
+        canonical="https://gratkapl.com/privacy-policy"
       />
       <div className="duid-container py-8 max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-foreground mb-6">Kebijakan Privasi</h1>

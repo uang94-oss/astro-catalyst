@@ -6,7 +6,7 @@ const DisclaimerPage = () => {
       <SEOHead
         title="Disclaimer - gratkapl.com"
         description="Disclaimer gratkapl.com. Informasi penting mengenai penggunaan konten dan tanggung jawab."
-        url="https://gratkapl.com/disclaimer"
+        canonical="https://gratkapl.com/disclaimer"
       />
       <div className="duid-container py-8 max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-foreground mb-6">Disclaimer</h1>

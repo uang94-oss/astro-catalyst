@@ -16,7 +16,7 @@ const SitemapPage = () => {
       <SEOHead
         title="Sitemap - gratkapl.com"
         description="Peta situs gratkapl.com. Temukan semua halaman dan artikel yang tersedia."
-        url="https://gratkapl.com/sitemap"
+        canonical="https://gratkapl.com/sitemap"
       />
       <div className="duid-container py-8 max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-foreground mb-8">Sitemap</h1>

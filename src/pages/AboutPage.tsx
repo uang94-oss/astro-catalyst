@@ -6,7 +6,7 @@ const AboutPage = () => {
       <SEOHead
         title="About - gratkapl.com"
         description="Tentang gratkapl.com — blog teknologi modern yang membahas AI, programming, web design, dan SEO."
-        url="https://gratkapl.com/about"
+        canonical="https://gratkapl.com/about"
       />
       <div className="duid-container py-8 max-w-3xl mx-auto">
         <h1 className="text-3xl font-bold text-foreground mb-6">Tentang Kami</h1>
