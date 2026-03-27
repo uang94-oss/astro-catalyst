@@ -20,6 +20,7 @@ export const posts: Post[] = [
     slug: "cara-membuat-laporan-keuangan-pribadi-dengan-ai",
     title: "Cara Membuat Laporan Keuangan Pribadi dengan AI",
     excerpt: "Pelajari bagaimana teknologi AI dapat membantu kamu mengelola dan membuat laporan keuangan pribadi secara otomatis dan efisien.",
+    aiOverview: "Mengelola keuangan pribadi sering terasa rumit, apalagi jika semuanya masih manual. Dengan bantuan AI, proses pencatatan dan analisis bisa jadi jauh lebih cepat dan rapi tanpa harus paham akuntansi secara mendalam.",
     content: `Mengelola keuangan pribadi sering kali terasa rumit, terutama jika kamu tidak memiliki latar belakang akuntansi. Namun, dengan kemajuan teknologi AI, kini membuat laporan keuangan pribadi menjadi jauh lebih mudah.
 
 Dalam panduan ini, kita akan membahas langkah-langkah praktis untuk memanfaatkan tools AI dalam pencatatan dan perencanaan keuangan kamu sehari-hari.
