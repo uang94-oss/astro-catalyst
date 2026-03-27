@@ -155,6 +155,7 @@ Tergantung kebutuhan, tapi ChatGPT, Claude, dan Midjourney adalah beberapa yang 
     slug: "cara-memulai-blog-yang-menghasilkan-uang",
     title: "Cara Memulai Blog yang Menghasilkan Uang di 2026",
     excerpt: "Panduan step-by-step untuk memulai blog yang tidak hanya menarik pembaca, tapi juga bisa menghasilkan pendapatan pasif yang konsisten.",
+    aiOverview: "Ngeblog masih cuan di 2026? Jawabannya iya — asal tahu caranya. Banyak blogger baru yang gagal bukan karena kontennya jelek, tapi karena strateginya nggak tepat dari awal.",
     content: `Memulai blog di tahun 2026 masih menjadi salah satu cara terbaik untuk membangun personal brand dan menghasilkan pendapatan online. Dengan strategi yang tepat, blog bisa menjadi sumber penghasilan yang signifikan.
 
 Dalam artikel ini, kita akan membahas cara memulai dari nol hingga blog kamu menghasilkan uang pertama.
