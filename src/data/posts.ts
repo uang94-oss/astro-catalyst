@@ -237,6 +237,7 @@ Bisa dimulai dari gratis menggunakan tools open-source hingga jutaan per bulan u
     slug: "tips-menghemat-uang-dengan-metode-50-30-20",
     title: "Tips Menghemat Uang dengan Metode 50/30/20",
     excerpt: "Pelajari metode budgeting 50/30/20 yang telah terbukti efektif untuk mengelola keuangan pribadi dan membangun tabungan.",
+    aiOverview: "Catatan keuangan yang berantakan sering jadi penyebab utama sulitnya mengontrol pengeluaran. Metode 50/30/20 hadir sebagai solusi sederhana yang bisa langsung diterapkan siapa pun.",
     content: `Metode 50/30/20 adalah salah satu framework budgeting paling populer dan mudah diterapkan. Dikembangkan oleh Senator Elizabeth Warren, metode ini membagi pendapatan ke dalam tiga kategori utama.
 
 Mari kita pelajari cara menerapkan metode ini dalam kehidupan sehari-hari.
