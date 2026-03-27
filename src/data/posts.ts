@@ -103,7 +103,7 @@ Sangat relevan. Meskipun cara orang mencari informasi berubah, optimasi untuk me
 Biasanya 3-6 bulan untuk melihat hasil signifikan, tergantung kompetisi dan kualitas konten.`,
     category: "SEO",
     tags: ["SEO", "Google", "AI Overview", "Digital Marketing"],
-    author: "Admin",
+    author: "Nagol Dachi",
     date: "2026-03-22",
     image: "https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?w=800&q=80",
     readTime: 10,
