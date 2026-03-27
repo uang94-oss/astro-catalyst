@@ -67,6 +67,7 @@ Banyak tools yang menawarkan versi gratis dengan fitur dasar. Untuk fitur premiu
     slug: "strategi-seo-2026-panduan-lengkap",
     title: "Strategi SEO 2026: Panduan Lengkap untuk Pemula",
     excerpt: "Panduan komprehensif tentang strategi SEO terbaru yang efektif di tahun 2026, termasuk optimasi untuk AI Overview dan Google Discover.",
+    aiOverview: "Dunia SEO berubah drastis setiap tahun, dan 2026 bukan pengecualian. Kalau masih pakai cara lama, besar kemungkinan website kamu malah tenggelam di halaman belakang Google.",
     content: `SEO terus berkembang dan di tahun 2026, ada banyak perubahan signifikan yang perlu kamu ketahui. Google semakin canggih dalam memahami konten, dan strategi lama mungkin sudah tidak efektif lagi.
 
 Artikel ini akan membahas secara mendalam tentang teknik SEO modern yang bisa meningkatkan visibilitas website kamu di mesin pencari.
