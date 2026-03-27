@@ -1,0 +1,34 @@
+{
+  "keuangan": {
+    "keywords": ["keuangan", "mengatur keuangan pribadi", "manajemen finansial", "pencatatan keuangan", "laporan keuangan", "perencanaan keuangan", "budget", "budgeting"],
+    "url": "/kategori/keuangan",
+    "articles": [
+      { "slug": "cara-membuat-laporan-keuangan-pribadi-dengan-ai", "anchors": ["laporan keuangan pribadi", "membuat laporan keuangan", "mengelola keuangan dengan AI"] },
+      { "slug": "tips-menghemat-uang-dengan-metode-50-30-20", "anchors": ["metode budgeting 50/30/20", "cara menghemat uang", "tips budgeting"] },
+      { "slug": "investasi-saham-untuk-pemula-2026", "anchors": ["panduan investasi saham", "cara memulai investasi", "investasi untuk pemula"] }
+    ]
+  },
+  "seo": {
+    "keywords": ["seo", "optimasi mesin pencari", "search engine optimization", "ranking google", "strategi seo"],
+    "url": "/kategori/seo",
+    "articles": [
+      { "slug": "strategi-seo-2026-panduan-lengkap", "anchors": ["strategi SEO terbaru", "panduan SEO 2026", "teknik SEO modern"] },
+      { "slug": "google-discover-cara-agar-artikel-muncul", "anchors": ["optimasi Google Discover", "cara masuk Google Discover", "traffic dari Discover"] }
+    ]
+  },
+  "ai": {
+    "keywords": ["ai", "artificial intelligence", "kecerdasan buatan", "machine learning", "deep learning"],
+    "url": "/kategori/ai",
+    "articles": [
+      { "slug": "panduan-lengkap-ai-untuk-content-creator", "anchors": ["AI untuk content creator", "tools AI kreatif", "panduan AI"] },
+      { "slug": "mengenal-machine-learning-untuk-bisnis", "anchors": ["machine learning untuk bisnis", "implementasi ML", "AI untuk UMKM"] }
+    ]
+  },
+  "blogging": {
+    "keywords": ["blogging", "blog", "ngeblog", "content creation", "menulis blog"],
+    "url": "/kategori/blogging",
+    "articles": [
+      { "slug": "cara-memulai-blog-yang-menghasilkan-uang", "anchors": ["memulai blog menghasilkan uang", "monetisasi blog", "panduan blogging"] }
+    ]
+  }
+}
