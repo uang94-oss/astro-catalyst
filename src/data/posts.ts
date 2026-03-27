@@ -267,7 +267,7 @@ Mulai dari yang bisa kamu lakukan. Bahkan menyisihkan 5-10% untuk tabungan sudah
 Metode ini fleksibel dan bisa disesuaikan. Yang terpenting adalah memiliki sistem budgeting yang kamu ikuti secara konsisten.`,
     category: "Keuangan",
     tags: ["Budgeting", "Keuangan Pribadi", "Tabungan", "Hemat"],
-    author: "Admin",
+    author: "Nagol Dachi",
     date: "2026-03-12",
     image: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80",
     readTime: 7,
