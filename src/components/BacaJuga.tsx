@@ -15,7 +15,7 @@ const BacaJuga = ({ posts }: BacaJugaProps) => {
         {posts.slice(0, 3).map((post) => (
           <li key={post.id}>
             <Link to={`/${post.slug}`} title={post.title}>
-              {post.excerpt.split(".")[0]}
+              {post.title}
             </Link>
           </li>
         ))}

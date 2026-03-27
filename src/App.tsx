@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Header from "@/components/Header";
 import MobileNav from "@/components/MobileNav";
+import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import ArticlePage from "./pages/ArticlePage";
 import CategoryPage from "./pages/CategoryPage";
@@ -19,9 +20,9 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen">
+        <div className="min-h-screen flex flex-col">
           <Header />
-          <div className="pt-14 pb-16 md:pb-0">
+          <div className="pt-14 pb-16 md:pb-0 flex-1">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/kategori/:slug" element={<CategoryPage />} />
@@ -30,6 +31,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
+          <Footer />
           <MobileNav />
         </div>
       </BrowserRouter>
