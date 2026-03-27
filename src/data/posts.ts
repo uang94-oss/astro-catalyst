@@ -315,6 +315,7 @@ Ya, tapi niche berita, lifestyle, teknologi, dan keuangan cenderung lebih sering
     slug: "investasi-saham-untuk-pemula-2026",
     title: "Investasi Saham untuk Pemula: Panduan 2026",
     excerpt: "Panduan lengkap memulai investasi saham bagi pemula, termasuk cara memilih broker, analisis saham, dan manajemen risiko.",
+    aiOverview: "Investasi saham sering dianggap menakutkan buat pemula, padahal sekarang bisa dimulai dari Rp100 ribu. Yang penting, paham dulu dasarnya sebelum terjun.",
     content: `Investasi saham bisa menjadi salah satu cara terbaik untuk membangun kekayaan jangka panjang. Di tahun 2026, akses ke pasar saham semakin mudah berkat teknologi dan aplikasi investasi yang user-friendly.
 
 ## Mengapa Investasi Saham?
