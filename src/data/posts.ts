@@ -341,7 +341,7 @@ Sekarang bisa dimulai dari Rp100.000 saja di beberapa aplikasi investasi.
 Blue chip stocks dari perusahaan besar yang stabil seperti BBCA, BBRI, dan TLKM sering direkomendasikan untuk pemula.`,
     category: "Keuangan",
     tags: ["Investasi", "Saham", "Keuangan", "Pemula"],
-    author: "Admin",
+    author: "Nagol Dachi",
     date: "2026-03-08",
     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
     readTime: 8,
