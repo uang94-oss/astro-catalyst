@@ -54,6 +54,13 @@ const Header = () => {
             <Link to="/" onClick={() => setMobileOpen(false)} className="block px-3 py-2.5 text-sm font-medium text-foreground rounded-lg hover:bg-muted">
               Beranda
             </Link>
+            <Link to="/about" onClick={() => setMobileOpen(false)} className="block px-3 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted">
+              About
+            </Link>
+            <Link to="/contact" onClick={() => setMobileOpen(false)} className="block px-3 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground rounded-lg hover:bg-muted">
+              Contact
+            </Link>
+            <div className="px-3 py-2 text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-3">Kategori</div>
             {categories.map((cat) => (
               <Link
                 key={cat.slug}

@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import { categories } from "@/data/posts";
 
+const footerPages = [
+  { path: "/about", label: "About" },
+  { path: "/contact", label: "Contact" },
+  { path: "/privacy-policy", label: "Privacy Policy" },
+  { path: "/disclaimer", label: "Disclaimer" },
+  { path: "/sitemap", label: "Sitemap" },
+];
+
 const Footer = () => {
   return (
     <footer className="border-t border-border bg-card mt-12">
@@ -32,11 +40,11 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-sm text-foreground mb-3 uppercase tracking-wider">Halaman</h4>
             <ul className="space-y-1.5">
-              {["About", "Contact", "Privacy Policy", "Disclaimer", "Sitemap"].map((page) => (
-                <li key={page}>
-                  <span className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer">
-                    {page}
-                  </span>
+              {footerPages.map((page) => (
+                <li key={page.path}>
+                  <Link to={page.path} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {page.label}
+                  </Link>
                 </li>
               ))}
             </ul>
