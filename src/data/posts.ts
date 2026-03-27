@@ -198,6 +198,7 @@ Bisa dimulai dari Rp500.000 - Rp1.500.000 per tahun untuk domain dan hosting das
     slug: "mengenal-machine-learning-untuk-bisnis",
     title: "Mengenal Machine Learning untuk Bisnis Kecil",
     excerpt: "Bagaimana bisnis kecil dan UMKM bisa memanfaatkan machine learning untuk meningkatkan efisiensi operasional dan penjualan.",
+    aiOverview: "Machine learning dulu terdengar seperti teknologi mahal yang cuma bisa dipakai perusahaan besar. Sekarang, UMKM pun bisa manfaatkan — bahkan ada yang gratis.",
     content: `Machine learning bukan lagi teknologi eksklusif untuk perusahaan besar. Kini, bisnis kecil dan UMKM juga bisa memanfaatkan teknologi ini untuk meningkatkan performa bisnis mereka.
 
 Artikel ini membahas implementasi praktis machine learning yang bisa langsung diterapkan oleh bisnis kecil.
