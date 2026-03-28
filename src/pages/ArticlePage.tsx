@@ -161,6 +161,8 @@ const ArticlePage = () => {
 
         <RelatedPosts posts={related} />
       </div>
+
+      <MobileStickyAd />
     </>
   );
 };
