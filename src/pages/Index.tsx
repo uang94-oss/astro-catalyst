@@ -1,9 +1,7 @@
-import { posts, getFeaturedPosts } from "@/data/posts";
+import { getFeaturedPosts } from "@/data/posts";
 import StoryCategories from "@/components/StoryCategories";
 import FeaturedSlider from "@/components/FeaturedSlider";
 import ForYouSection from "@/components/ForYouSection";
-import FeaturedPostsSection from "@/components/FeaturedPostsSection";
-import RecentPostsSection from "@/components/RecentPostsSection";
 import SEOHead from "@/components/SEOHead";
 
 const Index = () => {
@@ -12,12 +10,12 @@ const Index = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "DuidPro",
-    url: "https://duidpro.com",
-    description: "Platform edukasi keuangan, teknologi, SEO, dan blogging",
+    name: "gratkapl.com",
+    url: "https://gratkapl.com",
+    description: "Blog teknologi modern yang membahas AI, programming, web design, dan SEO.",
     potentialAction: {
       "@type": "SearchAction",
-      target: "https://duidpro.com/cari?q={search_term_string}",
+      target: "https://gratkapl.com/cari?q={search_term_string}",
       "query-input": "required name=search_term_string",
     },
   };
@@ -25,16 +23,14 @@ const Index = () => {
   return (
     <>
       <SEOHead
-        title="DuidPro - Edukasi Keuangan, SEO & AI"
-        description="Platform edukasi keuangan, teknologi, SEO, dan blogging untuk membantu kamu meraih kebebasan finansial dan digital."
+        title="gratkapl.com - AI, Programming, Web Design & SEO"
+        description="Blog teknologi modern yang membahas AI, programming, web design, dan SEO."
         jsonLd={jsonLd}
       />
 
       <StoryCategories />
       <FeaturedSlider posts={featured} />
       <ForYouSection />
-      <FeaturedPostsSection posts={featured} />
-      <RecentPostsSection posts={posts} />
     </>
   );
 };
