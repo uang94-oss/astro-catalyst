@@ -13,7 +13,7 @@ interface SEOHeadProps {
 
 const SEOHead = ({ title, description, canonical, image, type = "website", publishedTime, author, jsonLd }: SEOHeadProps) => {
   useEffect(() => {
-    document.title = `${title} | DuidPro`;
+    document.title = `${title} | gratkapl.com`;
 
     const setMeta = (name: string, content: string, property = false) => {
       const attr = property ? "property" : "name";

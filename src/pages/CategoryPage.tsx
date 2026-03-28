@@ -15,7 +15,7 @@ const CategoryPage = () => {
     <>
       <SEOHead
         title={`Kategori ${category.name}`}
-        description={`Kumpulan artikel tentang ${category.name} di DuidPro.`}
+        description={`Kumpulan artikel tentang ${category.name} di gratkapl.com.`}
       />
 
       <div className="duid-container py-6">
