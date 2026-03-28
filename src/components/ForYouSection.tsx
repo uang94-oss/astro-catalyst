@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { posts, categories } from "@/data/posts";
 
+const POSTS_PER_PAGE = 6;
+
 const ForYouSection = () => {
   const [activeTab, setActiveTab] = useState("Newest");
+  const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
 
   const tabs = ["Newest", ...categories.map((c) => c.name)];
 
@@ -11,6 +14,14 @@ const ForYouSection = () => {
     activeTab === "Newest"
       ? posts
       : posts.filter((p) => p.category === activeTab);
+
+  const visible = filtered.slice(0, visibleCount);
+  const hasMore = visibleCount < filtered.length;
+
+  const handleTabChange = useCallback((tab: string) => {
+    setActiveTab(tab);
+    setVisibleCount(POSTS_PER_PAGE);
+  }, []);
 
   return (
     <section className="py-6">
@@ -22,7 +33,7 @@ const ForYouSection = () => {
         {tabs.map((tab) => (
           <button
             key={tab}
-            onClick={() => setActiveTab(tab)}
+            onClick={() => handleTabChange(tab)}
             className={`duid-label-tab whitespace-nowrap ${activeTab === tab ? "active" : ""}`}
           >
             {tab}
@@ -31,7 +42,7 @@ const ForYouSection = () => {
       </div>
 
       <div className="duid-container space-y-4">
-        {filtered.map((post) => (
+        {visible.map((post) => (
           <Link
             key={post.id}
             to={`/${post.slug}`}
@@ -63,6 +74,15 @@ const ForYouSection = () => {
             </div>
           </Link>
         ))}
+
+        {hasMore && (
+          <button
+            onClick={() => setVisibleCount((prev) => prev + POSTS_PER_PAGE)}
+            className="w-full py-3 text-sm font-medium text-primary hover:text-primary/80 bg-muted/50 rounded-xl transition-colors"
+          >
+            Muat lebih banyak ({filtered.length - visibleCount} artikel lagi)
+          </button>
+        )}
       </div>
     </section>
   );
