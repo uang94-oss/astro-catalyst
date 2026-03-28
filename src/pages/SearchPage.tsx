@@ -21,7 +21,7 @@ const SearchPage = () => {
 
   return (
     <>
-      <SEOHead title="Cari Artikel" <SEOHead title="Cari Artikel" description="Cari artikel di gratkapl.com." /> />
+      <SEOHead title="Cari Artikel" description="Cari artikel di gratkapl.com." />
 
       <div className="duid-container py-6">
         <h1 className="text-2xl font-extrabold text-foreground mb-6">Cari Artikel</h1>
