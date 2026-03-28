@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { posts, categories } from "@/data/posts";
+import { posts } from "@/data/posts";
 import SEOHead from "@/components/SEOHead";
 
 const SitemapPage = () => {
