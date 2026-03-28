@@ -92,6 +92,9 @@ const ArticlePage = () => {
       <SEOHead title={post.title} description={post.excerpt} image={post.image} type="article" publishedTime={post.date} author={post.author} jsonLd={jsonLd} />
 
       <div className="duid-container py-4">
+        {/* Above the fold ad */}
+        <AdSlot format="horizontal" className="mb-4" label="Advertisement" />
+
         <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4">
           ← Kembali
         </Link>
