@@ -26,7 +26,7 @@ const Header = () => {
             </button>
             <Link to="/" className="flex items-center">
               <span className="text-lg font-extrabold text-foreground tracking-tight">
-                duidpro
+                gratkapl
               </span>
               <span className="text-lg font-normal text-muted-foreground">.com</span>
             </Link>
