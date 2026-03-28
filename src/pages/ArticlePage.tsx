@@ -8,6 +8,9 @@ import TableOfContents from "@/components/TableOfContents";
 import ShareButtons from "@/components/ShareButtons";
 import SEOHead from "@/components/SEOHead";
 import NotFound from "./NotFound";
+import AdSlot from "@/components/ads/AdSlot";
+import ParallaxAd from "@/components/ads/ParallaxAd";
+import MobileStickyAd from "@/components/ads/MobileStickyAd";
 
 const ArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
