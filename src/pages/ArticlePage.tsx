@@ -8,6 +8,9 @@ import TableOfContents from "@/components/TableOfContents";
 import ShareButtons from "@/components/ShareButtons";
 import SEOHead from "@/components/SEOHead";
 import NotFound from "./NotFound";
+import AdSlot from "@/components/ads/AdSlot";
+import ParallaxAd from "@/components/ads/ParallaxAd";
+import MobileStickyAd from "@/components/ads/MobileStickyAd";
 
 const ArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -36,32 +39,62 @@ const ArticlePage = () => {
   const toId = (text: string) =>
     text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
 
-  const renderContent = (text: string) => {
-    return text.split("\n\n").map((block, i) => {
-      if (block.startsWith("## ")) {
-        const t = block.replace("## ", "");
-        return <h2 key={i} id={toId(t)}>{t}</h2>;
-      }
-      if (block.startsWith("### ")) {
-        const t = block.replace("### ", "");
-        return <h3 key={i} id={toId(t)}>{t}</h3>;
-      }
-      if (block.includes("**")) {
-        const parts = block.split(/\*\*/g);
-        return <p key={i}>{parts.map((part, j) => (j % 2 === 1 ? <strong key={j}>{part}</strong> : part))}</p>;
-      }
-      return <p key={i}>{block}</p>;
-    });
+  const renderBlock = (block: string, i: number) => {
+    if (block.startsWith("## ")) {
+      const t = block.replace("## ", "");
+      return <h2 key={`b-${i}`} id={toId(t)}>{t}</h2>;
+    }
+    if (block.startsWith("### ")) {
+      const t = block.replace("### ", "");
+      return <h3 key={`b-${i}`} id={toId(t)}>{t}</h3>;
+    }
+    if (block.includes("**")) {
+      const parts = block.split(/\*\*/g);
+      return <p key={`b-${i}`}>{parts.map((part, j) => (j % 2 === 1 ? <strong key={j}>{part}</strong> : part))}</p>;
+    }
+    return <p key={`b-${i}`}>{block}</p>;
   };
 
-  const contentBefore = paragraphs.slice(0, insertIndex + 1);
-  const contentAfter = paragraphs.slice(insertIndex + 1);
+  // Build content with ads injected at strategic positions
+  const buildContentWithAds = () => {
+    const elements: React.ReactNode[] = [];
+    const bacaInsert = Math.min(2, paragraphs.length - 1);
+
+    paragraphs.forEach((block, i) => {
+      elements.push(renderBlock(block, i));
+
+      // After paragraph 3 → Parallax Ad
+      if (i === 2) {
+        elements.push(<ParallaxAd key="parallax-ad" />);
+      }
+
+      // After paragraph 3 (bacaJuga insert point)
+      if (i === bacaInsert) {
+        elements.push(<BacaJuga key="baca-juga" posts={bacaJugaPosts} />);
+      }
+
+      // After paragraph 6 → Inline Ad
+      if (i === 5) {
+        elements.push(<AdSlot key="inline-ad-1" format="responsive" label="Sponsored" />);
+      }
+
+      // After paragraph 9 → Inline Ad (optional, only if enough content)
+      if (i === 8 && paragraphs.length > 10) {
+        elements.push(<AdSlot key="inline-ad-2" format="responsive" label="Sponsored" />);
+      }
+    });
+
+    return elements;
+  };
 
   return (
     <>
       <SEOHead title={post.title} description={post.excerpt} image={post.image} type="article" publishedTime={post.date} author={post.author} jsonLd={jsonLd} />
 
       <div className="duid-container py-4">
+        {/* Above the fold ad */}
+        <AdSlot format="horizontal" className="mb-4" label="Advertisement" />
+
         <Link to="/" className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors mb-4">
           ← Kembali
         </Link>
@@ -108,12 +141,13 @@ const ArticlePage = () => {
         {/* Table of Contents */}
         <TableOfContents content={post.content} />
 
-        {/* Content */}
+        {/* Content with injected ads */}
         <div className="article-content">
-          {renderContent(contentBefore.join("\n\n"))}
-          <BacaJuga posts={bacaJugaPosts} />
-          {renderContent(contentAfter.join("\n\n"))}
+          {buildContentWithAds()}
         </div>
+
+        {/* Below article ad */}
+        <AdSlot format="responsive" className="mt-6" label="Advertisement" />
 
         {/* Tags */}
         <div className="mt-8 pt-5 border-t border-border flex flex-wrap gap-2">
@@ -127,6 +161,8 @@ const ArticlePage = () => {
 
         <RelatedPosts posts={related} />
       </div>
+
+      <MobileStickyAd />
     </>
   );
 };
