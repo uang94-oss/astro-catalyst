@@ -1,7 +1,6 @@
 backend:
-  name: github
-  repo: YOUR_USERNAME/YOUR_REPO
-  branch: main
+  name: git-gateway
+  branch: main 
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
