@@ -141,12 +141,13 @@ const ArticlePage = () => {
         {/* Table of Contents */}
         <TableOfContents content={post.content} />
 
-        {/* Content */}
+        {/* Content with injected ads */}
         <div className="article-content">
-          {renderContent(contentBefore.join("\n\n"))}
-          <BacaJuga posts={bacaJugaPosts} />
-          {renderContent(contentAfter.join("\n\n"))}
+          {buildContentWithAds()}
         </div>
+
+        {/* Below article ad */}
+        <AdSlot format="responsive" className="mt-6" label="Advertisement" />
 
         {/* Tags */}
         <div className="mt-8 pt-5 border-t border-border flex flex-wrap gap-2">
