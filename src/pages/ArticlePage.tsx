@@ -24,7 +24,6 @@ const ArticlePage = () => {
   const articleUrl = `https://gratkapl.com/${post.slug}`;
 
   const paragraphs = post.content.split("\n\n");
-  const insertIndex = Math.min(2, paragraphs.length - 1);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -40,29 +39,25 @@ const ArticlePage = () => {
   const toId = (text: string) =>
     text.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]/g, "");
 
-  const renderBlock = (block: string, i: number) => {
-    if (block.startsWith("## ")) {
-      const t = block.replace("## ", "");
-      return <h2 key={`b-${i}`} id={toId(t)}>{t}</h2>;
-    }
-    if (block.startsWith("### ")) {
-      const t = block.replace("### ", "");
-      return <h3 key={`b-${i}`} id={toId(t)}>{t}</h3>;
-    }
-    if (block.includes("**")) {
-      const parts = block.split(/\*\*/g);
-      return <p key={`b-${i}`}>{parts.map((part, j) => (j % 2 === 1 ? <strong key={j}>{part}</strong> : part))}</p>;
-    }
-    return <p key={`b-${i}`}>{block}</p>;
-  };
-
   // Build content with ads injected at strategic positions
   const buildContentWithAds = () => {
     const elements: React.ReactNode[] = [];
     const bacaInsert = Math.min(2, paragraphs.length - 1);
 
     paragraphs.forEach((block, i) => {
-      elements.push(renderBlock(block, i));
+      // Merender setiap blok paragraf dengan ReactMarkdown
+      // Kita menimpa (override) h2 dan h3 agar otomatis memiliki atribut id untuk fitur Daftar Isi
+      elements.push(
+        <ReactMarkdown
+          key={`md-${i}`}
+          components={{
+            h2: ({ node, ...props }) => <h2 id={toId(String(props.children))} {...props} />,
+            h3: ({ node, ...props }) => <h3 id={toId(String(props.children))} {...props} />
+          }}
+        >
+          {block}
+        </ReactMarkdown>
+      );
 
       // After paragraph 3 → Parallax Ad
       if (i === 2) {
@@ -142,8 +137,8 @@ const ArticlePage = () => {
         {/* Table of Contents */}
         <TableOfContents content={post.content} />
 
-        {/* Content with injected ads */}
-        <div className="article-content">
+        {/* Content with injected ads and Tailwind Typography (prose) */}
+        <div className="article-content prose prose-slate lg:prose-lg dark:prose-invert max-w-none mt-6">
           {buildContentWithAds()}
         </div>
 
